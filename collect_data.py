@@ -5,8 +5,9 @@ import tushare as ts
 
 ts.set_token('c5d7069264f4d5433702545cfd0dd72979d065cb8ee84f561c6928d9')
 pro = ts.pro_api()
-df = pro.daily(trade_date='20190215', fields='ts_code')
-print(df.columns)
+df = pro.daily(trade_date='20190219')
+print(df)
+print(df.index)
 #df = pro.weekly(trade_date='20181123', ts_code='600000.SH',  fields='ts_code,trade_date,open,high,low,close,vol,amount')
 #df = pro.daily_basic(ts_code='600000.SH', trade_date='20190215')
 
