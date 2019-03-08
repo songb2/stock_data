@@ -92,5 +92,23 @@ CREATE TABLE `histories_3` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8381128 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
+CREATE TABLE `import_data_history` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `table_name` varchar(45) DEFAULT NULL,
+  `start_date` date DEFAULT NULL,
+  `end_date` date DEFAULT NULL,
+  `ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`) /*!80000 INVISIBLE */,
+  KEY `start_date` (`start_date`) /*!80000 INVISIBLE */,
+  KEY `end_date` (`end_date`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+
+
+
+
 
 
