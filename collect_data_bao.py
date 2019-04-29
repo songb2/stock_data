@@ -159,7 +159,10 @@ def main():
         elif start_date_import > start_date_max:
             start_date = start_date_max
 
-        start_date = (start_date + datetime.timedelta(days=1)).strftime('%Y-%m-%d')
+        if start_date != datetime.date(2006, 1, 1):
+            start_date = (start_date + datetime.timedelta(days=1)).strftime('%Y-%m-%d')
+        else:
+            start_date = start_date.strftime('%Y-%m-%d')
         end_date = datetime.date.today().strftime('%Y-%m-%d')
         
         insert_data_to_import_data_history(table_name, start_date, end_date)
